@@ -16,7 +16,7 @@
 
 # 최대공약수True와 최소공배수False 구하기
 
-switchTF = False
+switchTF = True
 
 num1 = int(input("첫번째 수를 입력하세요: "))
 num2 = int(input("두번째 수를 입력하세요: "))
@@ -25,8 +25,7 @@ def calFactor():
     # 약수계산
     for i in range(min(num1, num2), 0, -1):
         if (num1 % i) == 0 and (num2 % i) == 0:
-            return i
-            
+            return i           
 
 def calMultiple():
     # 배수계산
@@ -36,11 +35,9 @@ def calMultiple():
     
 #출력함수
 def valOutput():
-    global arrNum
     result = calFactor() if switchTF else calMultiple()
     print(result)
-    
-        
+           
 valOutput()
 
 
