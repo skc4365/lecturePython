@@ -1,6 +1,6 @@
 import numpy as np
 
-#===== 버블정렬 =====
+#===== 삽입정렬 =====
 arrNum = np.array([57, 33, 41, 91, 7, 18, 52, 23], int)
 
 def sortInsertion():
