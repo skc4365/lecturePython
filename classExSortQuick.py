@@ -8,7 +8,7 @@ def partition(arr, left, right):
     low = left +1
     high = right
     pivot = arr[left]
-    print("pivot값===================: {}" .format(arr[left]))
+    print("pivot값 : {}" .format(arr[left]))
     
     print("_low: {}, high: {}" .format(arr[low], arr[high]))
     while (low <= high):
@@ -22,15 +22,18 @@ def partition(arr, left, right):
             print("교환: {}" .format(arrNum))
             
     arr[left], arr[high] = arr[high], arr[left]
-    print("교환결과_____: ", arrNum)
+    print("교환결과 : ", arrNum, "\n")
     
-    print("high값______________: {}" .format(arr[high]))
+    print("high값 : {}" .format(arr[high]))
     return high
     
 def sortQuick(arr, left, right):
     if left < right :
+        print("partition(arr, left, right)파티션진행___")
         p = partition(arr, left, right)
+        print("sortQuick(arr, left, p - 1)왼쪽파티션_함수진행")
         sortQuick(arr, left, p - 1)
+        print("sortQuick(arr, p + 1, right)오른쪽파티션_함수진행")
         sortQuick(arr, p + 1, right)
         
 
