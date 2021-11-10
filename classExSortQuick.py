@@ -8,28 +8,30 @@ def partition(arr, left, right):
     low = left +1
     high = right
     pivot = arr[left]
-    print("pivot값 : {}" .format(arr[left]))
+    print("pivot값 : {}, _low값: {}, high값: {}" .format(pivot, arr[low], arr[high]))
+    print("pivot인덱스 : [{}], _low인덱스: [{}], high인덱스: [{}]" .format(left, low, high))
     
-    print("_low: {}, high: {}" .format(arr[low], arr[high]))
     while (low <= high):
         while low <= right and arr[low] < pivot:
             low += 1
+            print("_LOW카운트: [{}]" .format(low))
         while high >= left and arr[high] > pivot:
             high -= 1
+            print("_HIGH카운트: [{}]" .format(high))
             
         if low < high:
             arr[low], arr[high] = arr[high], arr[low]
             print("교환: {}" .format(arrNum))
             
     arr[left], arr[high] = arr[high], arr[left]
-    print("교환결과 : ", arrNum, "\n")
+    print("파티션결과 : ", arrNum, "\n")
     
-    print("high값 : {}" .format(arr[high]))
+    print("high값 : {}, high인덱스: [{}]" .format(arr[high], high))
     return high
     
 def sortQuick(arr, left, right):
     if left < right :
-        print("partition(arr, left, right)파티션진행___")
+        print("partition(arr, left, right)파티션진행중...")
         p = partition(arr, left, right)
         print("sortQuick(arr, left, p - 1)왼쪽파티션_함수진행")
         sortQuick(arr, left, p - 1)
